@@ -2,7 +2,7 @@
 
 ## 📌 Overview
 
-This project demonstrates a real-world AWS cloud security vulnerability involving **S3 misconfiguration**, leading to **unauthorized data exposure**, followed by proper remediation using secure configurations.
+This project demonstrates a real-world AWS cloud security vulnerability involving **S3 misconfiguration**, leading to **unauthorized data exposure**, followed by remediation using secure configurations.
 
 ---
 
@@ -67,23 +67,38 @@ After applying security controls, access to the file was denied.
 
 ---
 
-# 🧠 Key Learnings
+# 🔁 Steps to Reproduce
 
-* Misconfigured S3 buckets can lead to **critical data leaks**
-* AWS **Block Public Access** is a key security control
-* Bucket policies can introduce vulnerabilities if misused
-* Always follow the **principle of least privilege**
-* Defense-in-depth is essential in cloud security
+1. Create an S3 bucket
+2. Disable Block Public Access
+3. Upload a sensitive file
+4. Apply a public bucket policy
+5. Access the file via public URL
+6. Re-enable Block Public Access to remediate
 
 ---
 
-# 🔐 Security Best Practices
+# 🚨 Impact
 
-* Enable **Block Public Access** for all S3 buckets
-* Avoid public bucket policies unless absolutely necessary
-* Use IAM roles instead of long-term credentials
-* Regularly audit cloud configurations
-* Enable logging and monitoring (CloudTrail)
+Publicly exposed S3 buckets can lead to unauthorized access to sensitive data, resulting in data breaches and potential compliance violations.
+
+---
+
+# 🔐 Remediation
+
+* Enabled Block Public Access
+* Removed public bucket policy
+* Verified access restrictions
+
+---
+
+# 🧠 Key Learnings
+
+* Misconfigured S3 buckets can lead to **critical data leaks**
+* AWS Block Public Access is a key security control
+* Bucket policies can introduce vulnerabilities if misused
+* Least privilege principle is essential in cloud security
+* Defense-in-depth approach improves overall security posture
 
 ---
 
